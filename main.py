@@ -2,15 +2,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.chrome.options import Options
+
 from bs4 import BeautifulSoup
 import pandas as pd
 from openpyxl.workbook import Workbook
 
 chrome_driver_path = "C:/dev/chromedriver.exe"
-chrome_options = Options()
-chrome_options.add_experimental_option("detach", True)
-driver = webdriver.Chrome(options=chrome_options)
+driver = webdriver.Chrome()
 
 url = "https://www.nba.com/stats/players/traditional?PerMode=Totals&sort=PTS&dir=-1&SeasonType=Regular+Season&Season" \
       "=2022-23 "
