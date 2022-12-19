@@ -12,11 +12,13 @@ chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
 driver = webdriver.Chrome(options=chrome_options)
 
-url = "https://www.nba.com/stats/players/traditional?PerMode=Totals&sort=PTS&dir=-1&SeasonType=Regular+Season&Season=2022-23"
+url = "https://www.nba.com/stats/players/traditional?PerMode=Totals&sort=PTS&dir=-1&SeasonType=Regular+Season&Season" \
+      "=2022-23 "
 
 driver.get(url)
 select = Select(driver.find_element(By.XPATH,
-                                    '//*[@id="__next"]/div[2]/div[2]/div[3]/section[2]/div/div[2]/div[2]/div[1]/div[3]/div/label/div/select'))
+                                    '//*[@id="__next"]/div[2]/div[2]/div[3]/section[2]/div/div[2]/div[2]/div[1]/div['
+                                    '3]/div/label/div/select'))
 select.select_by_index(0)
 src = driver.page_source
 soup = BeautifulSoup(src, "lxml")
